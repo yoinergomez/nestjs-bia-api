@@ -12,6 +12,9 @@
   "collectCoverageFrom": [
     "**/*.(t|j)s"
   ],
+  "coveragePathIgnorePatterns": [
+    "src/helpers"
+  ],
   "coverageDirectory": "../coverage",
   "testEnvironment": "node",
   "globals": {

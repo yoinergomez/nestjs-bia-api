@@ -24,7 +24,7 @@ const isProduction = process.env.NODE_ENV === 'production';
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
       synchronize: true,
-      logging: true,
+      logging: false,
     }),
   ],
 })

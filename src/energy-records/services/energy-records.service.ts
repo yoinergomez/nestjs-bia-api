@@ -2,21 +2,16 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { DateUtils } from '../../utils/date.utils';
 import { Measures } from '../dto/find-by-date.dto';
 import { EnergyRecord } from '../entities/energy-record.entity';
 import { EnergyRecordsRepository } from '../repositories/energy-records.repository';
 
 @Injectable()
 export class EnergyRecordsService implements EnergyRecordsRepository {
-  private dateUtils: DateUtils;
-
   constructor(
     @InjectRepository(EnergyRecord)
     private energyRecordsRepository: Repository<EnergyRecord>,
-  ) {
-    this.dateUtils = new DateUtils();
-  }
+  ) {}
 
   create(energyRecords: EnergyRecord): Promise<EnergyRecord> {
     return this.energyRecordsRepository.save(energyRecords);
